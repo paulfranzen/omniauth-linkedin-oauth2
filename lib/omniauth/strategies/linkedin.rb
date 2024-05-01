@@ -61,7 +61,7 @@ module OmniAuth
       end
 
       def fetch_email_address
-        sleep(5)
+        sleep(10)
         @email_address_response ||= access_token.get(email_address_endpoint).parsed
       end
 
