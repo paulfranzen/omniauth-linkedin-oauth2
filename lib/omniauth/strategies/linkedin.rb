@@ -48,7 +48,10 @@ module OmniAuth
       end
 
       def raw_info
-        @raw_info ||= access_token.get(profile_endpoint).parsed
+        @raw_info ||= begin
+          sleep 10
+          access_token.get(profile_endpoint).parsed
+        end
       end
 
       private
@@ -61,7 +64,6 @@ module OmniAuth
       end
 
       def fetch_email_address
-        sleep(10)
         @email_address_response ||= access_token.get(email_address_endpoint).parsed
       end
 
