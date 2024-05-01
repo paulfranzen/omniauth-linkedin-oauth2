@@ -48,6 +48,7 @@ module OmniAuth
       end
 
       def raw_info
+        sleep(6)
         @raw_info ||= access_token.get(profile_endpoint).parsed
       end
 
